@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/:str', function(req, res, next) {
   const regex = /[^0-9a-zA-Z_]/g;
-  const filtered = req.params['str'].replace(regex, '');
+  const filtered = req.params['str'].replace(regex, ' ');
   const result = {filtered: filtered, length: filtered.length};
   res.json(result);
 });
